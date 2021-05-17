@@ -403,3 +403,14 @@ endif
 
 "mapping to append at end of the line in insert mode, using Ctrl+E
 inoremap <C-e> <C-o>A
+
+"<leader> is set to ',' Search for mapleader in this config file.
+"mapping in normal mode so that ,d will delete the content rather than cutting, send all the cut content to blackhole register
+nnoremap <leader>d "_d
+
+"mapping in visual mode
+xnoremap <leader>d "_d
+
+"visual mode, ',p' will delete the selected text and paste the content of default register in its place
+xnoremap <leader>p "_dP
+
