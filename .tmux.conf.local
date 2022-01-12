@@ -408,3 +408,6 @@ tmux_conf_update_plugins_on_reload=true
 # More natural split shortcuts "-" for vertical, "|" for horizontal
 bind | split-window -h
 bind - split-window -v
+
+# for nested tmux session, instead of <C-b> <C-b> press <C-g> 
+bind-key -n c-g send-prefix
