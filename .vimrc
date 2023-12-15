@@ -23,6 +23,7 @@
 "    -> Spell checking
 "    -> Misc
 "    -> Helper functions
+"    -> Custom changes
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -95,8 +96,8 @@ set ignorecase
 " When searching try to be smart about cases 
 set smartcase
 
-" Highlight search results
-set hlsearch
+" " Highlight search results
+" set hlsearch
 
 " Makes search act like search in modern browsers
 set incsearch 
@@ -381,6 +382,11 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Custom changes
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number
 set relativenumber
 set runtimepath^=~/.vim/pack/vendor/start/ctrlp.vim
@@ -414,3 +420,5 @@ xnoremap <leader>d "_d
 "visual mode, ',p' will delete the selected text and paste the content of default register in its place
 xnoremap <leader>p "_dP
 
+"normal mode, 'Esc' will toggle between highlight and no-highlight for the search results
+nnoremap <Esc> :set hlsearch! hlsearch?<CR>
